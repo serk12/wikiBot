@@ -2,9 +2,9 @@ import telebot
 import wikipedia
 from telebot import util
 
-
-API_TOKEN = open("../token", "rb").read()
-
+file = open("../token", "rb")
+API_TOKEN = file.read().replace("\n", "")
+file.close()
 bot = telebot.TeleBot(API_TOKEN)
 
 id_lang = {}
